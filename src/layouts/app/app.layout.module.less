@@ -153,15 +153,11 @@
 
 :global {
   .appMenu {
-    background: @main-sider-bg;
-
     .ant-menu-submenu-title,
     .ant-menu-item {
-      color: @main-sider-link;
       transition: color .5s ease-in-out;
 
       &:hover {
-        color: @main-sider-link-hover;
       }
     }
   }
@@ -169,7 +165,6 @@
 
 .menuLogo {
   height: 90px;
-  background-image: url('data:image/png;base64,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');
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
@@ -191,23 +186,18 @@
 .siderMenu {
   box-sizing: content-box;
   padding-top: @header-height;
-  background: @main-sider-bg !important;
 
   .selected {
-    color: @main-sider-link-hover;
   }
 
   :global {
     .ant-layout-sider-trigger {
-      background-color: @main-sider-bg;
     }
 
     .ant-menu-submenu-title:active {
-      background-color: @main-sider-bg !important;
     }
 
     .ant-menu-item-selected {
-      background: @main-menu-selected-bg;
       margin: 0;
       border-radius: 0;
       width: 100%;
@@ -243,20 +233,12 @@
 
   .ant-menu-submenu-popup {
     .ant-menu {
-      background-color: @main-sider-bg !important;
-      border-radius: 0;
-
       .ant-menu-item {
-        color: @main-sider-link;
-
         &:hover {
-          color: @main-sider-link-hover;
         }
       }
 
       .ant-menu-item-selected {
-        background: @main-menu-selected-bg;
-        color: @main-sider-link-hover;
       }
     }
   }
