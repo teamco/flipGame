@@ -1,0 +1,45 @@
+@import "@/theme/theme.less";
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+body {
+  margin: 0;
+  min-width: 700px;
+  overflow-x: hidden;
+}
+
+.landing {
+  .progress {
+    height: 2px;
+    background-color: lightcoral;
+    position: fixed;
+    z-index: 31;
+    top: 0;
+  }
+
+  .siteLayout {
+    background-color: #fff;
+
+    .siteLayoutContent {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+
+      :global {
+        .ant-back-top {
+          right: 50px;
+        }
+      }
+    }
+  }
+}
+
+.page404,
+.page403,
+.page500 {
+  width: 100%;
+}

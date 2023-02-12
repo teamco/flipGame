@@ -1,0 +1,174 @@
+@import '@/theme/theme.less';
+
+.landing {
+  background-color: #fff;
+
+  .page {
+    height: 100%;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .headerSection {
+    position: relative;
+    height: @header-height;
+  }
+
+  .contentFixed {
+    margin-top: 48px;
+  }
+
+  .landingTabs {
+    .hr {
+      position: relative;
+      top: 1px;
+      height: 1px;
+      background-color: #f0f0f0;
+    }
+
+    :global {
+      .ant-tabs-nav {
+        margin: 0;
+
+        .ant-tabs-nav-list {
+          justify-content: center;
+          width: 100%;
+        }
+      }
+
+      .ant-tabs {
+        background-color: #fff;
+      }
+
+      .ant-tabs-tab {
+        border-radius: 0 !important;
+        margin-left: -1px !important;
+        background-color: #fff !important;
+        text-transform: lowercase;
+        font-variant: small-caps;
+      }
+
+      .ant-tabs-tab-active {
+        background-color: rgb(241, 241, 241) !important;
+        border-bottom: 1px solid rgb(241, 241, 241) !important;
+      }
+    }
+  }
+
+  .realEstate {
+  }
+
+  .trends {
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      margin: 50px auto;
+    }
+  }
+
+  .areas {
+    margin-top: 50px;
+
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      margin: 50px auto;
+    }
+  }
+
+  .applications {
+    margin-top: 50px;
+
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      margin: 50px auto;
+    }
+
+  }
+
+  .workFlowWrapper {
+    margin-top: 50px;
+    overflow: hidden;
+
+    .workFlow {
+      background-color: rgb(241, 241, 241);
+      padding: 0 50px 50px 50px;
+      overflow: hidden;
+      position: relative;
+
+      h1 {
+        font-size: 32px;
+        text-align: center;
+        margin: 50px auto;
+      }
+
+      h3 {
+        font-size: 20px;
+        position: absolute;
+        top: 30%;
+
+        p {
+          font-size: 14px;
+        }
+
+        &.textLeft {
+          left: 20px;
+          text-align: left;
+        }
+
+        &.textRight {
+          right: 20px;
+          text-align: right;
+        }
+      }
+
+      img {
+        max-width: 300px;
+        width: 100%;
+      }
+
+      .textWrapperLeft {
+        margin-right: 20px;
+      }
+
+      .textWrapperRight {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .dealsWrapper {
+    margin-top: 50px;
+    overflow: hidden;
+
+    .deals {
+      background-color: rgb(241, 241, 241);
+      padding: 0 50px 50px 50px;
+      overflow: hidden;
+      position: relative;
+
+      h1 {
+        font-size: 32px;
+        text-align: center;
+        margin: 50px auto;
+      }
+    }
+  }
+
+  .searchWrapper {
+    height: 560px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/assets/main_bg.png");
+    background-color: transparent;
+
+    .search {
+      height: 60%;
+      padding: 0 50px 50px 50px;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+}

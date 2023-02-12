@@ -1,0 +1,48 @@
+@import '@/theme/theme.less';
+
+.breadcrumbs {
+  padding: 10px 20px;
+  box-shadow: 1px 1px 4px -2px lightslategray;
+  border-top: 1px solid #ededed;
+  position: relative;
+  margin-top: @header-height;
+  display: flex;
+  justify-content: space-between;
+  height: 59px;
+  z-index: 9;
+  align-items: center;
+  background-color: @sub-header-bg;
+  line-height: 56px;
+
+  :global {
+    .ant-breadcrumb-link {
+      max-width: 150px;
+      display: table-cell;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      a {
+        font-size: 14px;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    .ant-breadcrumb-separator {
+      font-size: 14px;
+    }
+  }
+
+  ol {
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+  }
+
+  li {
+    display: flex;
+  }
+}
