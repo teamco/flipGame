@@ -50,7 +50,6 @@ export const AppLayout = (props) => {
       mainMenu,
       mainHeader,
       mainFooter,
-      pageBreadcrumbs
     },
     waitBeforeLogin,
     siderPanels
@@ -127,11 +126,6 @@ export const AppLayout = (props) => {
                 <Layout>
                   <Content>
                     <Form.Provider>
-                      {pageBreadcrumbs && mode !== 'signIn' && (
-                          <Main.Breadcrumbs meta={meta}
-                                            onUpdate404={onUpdate404}
-                                            onUpdateDocumentMeta={onUpdateDocumentMeta}/>
-                      )}
                       <div className={'site-layout-content'}>
                         {outlet}
                       </div>

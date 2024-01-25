@@ -25,7 +25,6 @@ const DEFAULT_STATE = {
   },
   layoutOpts: {
     mainHeader: false,
-    pageBreadcrumbs: false,
     pageHeader: false,
     mainFooter: false,
     mainMenu: false
@@ -89,7 +88,6 @@ export default dvaModelExtend(commonModel, {
         payload: {
           layoutOpts: {
             mainHeader: visible,
-            pageBreadcrumbs: visible,
             pageHeader: visible,
             mainFooter: visible,
             mainMenu: visible

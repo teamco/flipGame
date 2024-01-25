@@ -3,7 +3,6 @@ import { Layout, Spin } from 'antd';
 import classnames from 'classnames';
 
 import Page403 from '@/pages/403';
-import PagePrompt from '@/components/Page/Prompt';
 
 import { isSpinning } from '@/utils/state';
 import { effectHook } from '@/utils/hooks';
@@ -54,8 +53,7 @@ export function Page(props) {
                 </div>
             )}>
               <Can I={ableFor} a={component}>
-                <PagePrompt touched={touched}/>
-                <div component={component} className={styles.pageContent}>
+                <div className={styles.pageContent}>
                   {props.children}
                 </div>
               </Can>

@@ -46,7 +46,7 @@ export const SubHeader = props => {
       },
       extra = []
     },
-    offsetTop = 48,
+    offsetTop = 0,
     ghost = false,
     isFixed = true
 

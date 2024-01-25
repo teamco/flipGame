@@ -44,9 +44,7 @@
     "react-intl": "^6.2.5",
     "react-json-to-csv": "^1.2.0",
     "react-json-view": "^1.21.3",
-    "react-router-prompt": "^0.6.1",
     "react-use-scroll-indicator": "^1.1.1",
-    "use-react-router-breadcrumbs": "^4.0.1",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
