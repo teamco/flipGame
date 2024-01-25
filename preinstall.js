@@ -1,4 +1,4 @@
-const rimraf = require('rimraf').default;
+const { rimraf } = require('rimraf');
 const dir = './src/.umi';
 
 rimraf(dir).then(() => {
