@@ -10,7 +10,7 @@ import { menus } from '@/services/menu.service';
 import { getSiderPanel } from '@/utils/panel';
 
 const appMeta = {
-  name: '__TITLE__',
+  name: 'Flip',
   charSet: 'utf-8'
 };
 

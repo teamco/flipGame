@@ -1,3 +1,5 @@
+import { getDvaApp } from '@umijs/max';
+
 import { stub } from '@/utils/function';
 
 /**
@@ -113,4 +115,13 @@ export const networkConnection = async (collectionPath, notice = true, action = 
     // console.error(`No network connection on ${action}: ${collectionPath}\n`, error);
     return false;
   }
+};
+
+/**
+ * @export
+ * @return {*}
+ */
+export const useDispatcher = () => {
+  const dva = getDvaApp();
+  return dva._store.dispatch;
 };

@@ -1,5 +1,6 @@
-import { setCreateHistoryOptions } from 'umi';
 import { enableMapSet } from 'immer';
+
+import reportWebVitals from './reportWebVitals';
 
 import { logger } from '@/utils/console';
 
@@ -87,3 +88,9 @@ export function onRouteChange(router) {
     }
   }))(window.console));
 })();
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

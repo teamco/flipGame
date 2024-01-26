@@ -27,6 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
   onDefineAbilities() {
     dispatch({ type: `authModel/defineAbilities` });
   },
+  onNotification() {
+  },
   onUpdateDocumentMeta(meta) {
     dispatch({ type: 'appModel/updateDocumentMeta', payload: { meta } });
   },

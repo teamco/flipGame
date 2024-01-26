@@ -3,12 +3,10 @@ import { useIntl } from '@umijs/max';
 import { Tooltip } from 'antd';
 import { CheckCircleTwoTone, WarningTwoTone } from '@ant-design/icons';
 
-import GenericPanel from './GenericPanel';
 import GenericTabs from './GenericTabs';
 import EditableTags from './EditableTags';
 import HiddenField from './HiddenField';
 import MandatoryTextarea from './MandatoryTextarea';
-import Phone from './phone';
 
 import { findObjectValue } from '@/utils/object';
 import { COLORS } from '@/utils/colors';
@@ -158,10 +156,8 @@ export const isDisabledField = (disabled, triggeredFieldName, formRef) => {
 };
 
 export default {
-  GenericPanel,
   GenericTabs,
   EditableTags,
   HiddenField,
-  Phone,
   MandatoryTextarea
 };

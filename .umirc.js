@@ -48,7 +48,7 @@ const __config__ = {
   mock: {},
   manifest: {},
   favicons: [
-    '/assets/favicon.ico',
+    '/assets/favicon.png',
     // '/assets/favicon-16x16.png',
     // '/assets/favicon-32x32.png'
   ],

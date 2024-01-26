@@ -1,9 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import { Spin } from 'antd';
+import classnames from 'classnames';
 
-import './loader.less';
+import { isSpinning } from '@/utils/state';
+
+import ModelLoader from './ModelLoader';
+
+import styles from './loader.less';
 
 /**
  * @export
@@ -12,31 +15,32 @@ import './loader.less';
  * @constructor
  */
 const Loader = (props) => {
-  const { contained, fullScreen, text = 'loading', page, sider } = props;
-  const spinning = 'spinning' in props ? props.spinning : true;
+  const {
+    spinning = false,
+    loading,
+    spinOn = [],
+    children,
+    className,
+    wrapperClassName
+  } = props;
 
-  const loaderClassNames = classnames('loader', {
-    ['hidden']: !spinning,
-    ['fullScreen']: fullScreen,
-    ['contained']: contained,
-    ['page']: page,
-    ['sider']: sider
+  const _spinning = spinning || isSpinning(loading, spinOn);
+  const _className = classnames(styles.loader, className, {
+    [styles.fullScreen]: !children && _spinning
   });
 
   return (
-      <div className={loaderClassNames}>
-        <div className={'wrapper'}>
-          <Spin spinning={spinning}/>
-        </div>
+      <div className={_className}>
+        <Spin wrapperClassName={wrapperClassName}
+              spinning={_spinning}
+              tip={children ? (
+                  <ModelLoader loading={loading}
+                               spinOn={spinOn}/>
+              ) : null}>
+          {children}
+        </Spin>
       </div>
   );
 };
-
-Loader.propTypes = {
-  spinning: PropTypes.bool,
-  fullScreen: PropTypes.bool
-};
-
-Loader.displayName = 'Loader';
 
 export default Loader;

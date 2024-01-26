@@ -16,8 +16,7 @@ export const DEFAULT_DATE_TIME_FORMAT = `${DEFAULT_DATE_FORMAT} HH:mm:ss`;
  * @constant
  * @type {function(*=): dayjs.Dayjs}
  */
-export const nextDayOf = (amount=1) => dayjs().add(amount, 'day').endOf('day');
-
+export const nextDayOf = (amount = 1) => dayjs().add(amount, 'day').endOf('day');
 
 /**
  * @constant
@@ -92,3 +91,9 @@ export const dateTimeFormat = datetime => {
  * @return {boolean}
  */
 export const disabledDate = (current, unitOfTime = 'day') => current && current < dayjs().endOf(unitOfTime);
+
+export function hms(seconds) {
+  return [3600, 60].reduceRight((p, b) =>
+              r => [Math.floor(r / b)].concat(p(r % b)), r => [r])(seconds).
+      map(a => a.toString().padStart(2, '0'));
+}

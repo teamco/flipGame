@@ -7,7 +7,7 @@ const wrappers = ['@/wrappers/auth.admin'];
  * @return {{}}
  * @constructor
  */
-const ADMIN_ROUTES = (adminPath = '/admin') => {
+const ADMIN_ROUTES = (adminPath = '/ex') => {
   const adminErrors = ERRORS(adminPath, '');
 
   return {
@@ -18,9 +18,9 @@ const ADMIN_ROUTES = (adminPath = '/admin') => {
     routes: [
       {
         exact: true,
-        path: `${adminPath}/errors`,
-        component: '@/pages/errorLogs',
-        breadcrumb: 'route.errorLogs',
+        path: `${adminPath}/cards`,
+        component: '@/pages/cards',
+        breadcrumb: 'route.cards',
         wrappers
       },
       ...adminErrors

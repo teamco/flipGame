@@ -7,7 +7,7 @@
   z-index: 1001;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   opacity: 1;
   text-align: center;
 
@@ -37,5 +37,11 @@
     z-index: -1;
     opacity: 0;
     transition: opacity 1s ease 0.5s, z-index 0.1s ease 1.5s;
+  }
+
+  :global {
+    .ant-spin-nested-loading {
+      width: 100%;
+    }
   }
 }

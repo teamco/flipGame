@@ -15,8 +15,7 @@ const MAIN_ROUTES = (mainPath = '') => {
       {
         exact: true,
         path: `${mainPath}/`,
-        breadcrumb: 'route.home',
-        component: '@/pages/landing'
+        redirect: '/ex/cards'
       },
       adminRoutes,
       ...mainErrors

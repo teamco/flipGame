@@ -1,5 +1,6 @@
 export default {
   'menu.users': 'Users',
+  'menu.products': 'Products',
   'menu.userProfile': 'User Profile',
   'menu.manageUsers': 'Manage Users',
   'menu.manageRoles': 'Manage Roles',

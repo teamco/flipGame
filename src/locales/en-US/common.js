@@ -1,7 +1,7 @@
 export default {
-  'common.title': '__TITLE__',
+  'common.title': 'Flip',
   'common.description': '',
-  'common.author': '__TITLE__, {year}',
+  'common.author': 'Flip, {year}',
   'common.loading': 'Loading',
   'common.address': 'Address',
   'common.currency': 'USD',
