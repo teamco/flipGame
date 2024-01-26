@@ -41,10 +41,3 @@ jobs:
       - name: Run unit tests
         run: |
           yarn run unit:test
-
-      - name: "Tests Report"
-        uses: dorny/test-reporter@v1
-        with:
-          name: Tests Report
-          path: '__report__/junit/jest-component.xml'
-          reporter: jest-junit
