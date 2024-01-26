@@ -1,13 +1,19 @@
-import React, { memo, useContext, useEffect, useState } from 'react';
+import React, { memo, useContext, useEffect } from 'react';
 import { Empty } from 'antd';
 
 import Card from './card';
 
 import { CardsContext } from '@/pages/cards/cards';
-
-import styles from './cards.less';
 import { stub } from '@/utils/function';
 
+import styles from './cards.less';
+
+/**
+ * @export
+ * @param props
+ * @return {JSX.Element}
+ * @constructor
+ */
 const CardList = props => {
   const {
     completed = [],
@@ -32,7 +38,7 @@ const CardList = props => {
 
   useEffect(() => {
     clearSelected();
-  }, [selected, clearSelected]);
+  }, [clearSelected]);
 
   return (
       <div className={styles.cardsWrapper}>

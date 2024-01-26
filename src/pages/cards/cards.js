@@ -1,12 +1,16 @@
 import React, { memo, createContext, useState, useEffect } from 'react';
-import CardList from '@/pages/cards/cardList';
-import Config from '@/pages/cards/config.connect';
 import { Affix, Col, Layout, Row } from 'antd';
 import { Content } from 'antd/es/layout/layout';
-import styles from './cards.less';
+
 import Loader from '@/components/Loader';
+
+import CardList from '@/pages/cards/cardList';
+import Config from '@/pages/cards/config.connect';
+
 import { stub } from '@/utils/function';
 import { hms } from '@/utils/timestamp';
+
+import styles from './cards.less';
 
 const MODEL_NAME = 'cardModel';
 
@@ -56,7 +60,7 @@ const Cards = props => {
       clearInterval(ts);
       setTs(null);
     }
-  }, [timer]);
+  }, [timer, assignedCards, completed]);
 
   const cardListProps = {
     completed,
