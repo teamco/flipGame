@@ -4,7 +4,7 @@ import { Empty } from 'antd';
 import Card from './card';
 
 import Winner from '@/pages/cards/winner';
-import { CardsContext } from '@/pages/cards/cards';
+import { CardsContext, isWinner } from '@/pages/cards/cards';
 
 import { stub } from '@/utils/function';
 
@@ -47,7 +47,7 @@ const CardList = props => {
             )) :
             <Empty/>
         }
-        <Winner winner={completed.length * 2 === assignedCards.length} />
+        <Winner winner={isWinner(completed, assignedCards)} />
       </div>
   );
 };

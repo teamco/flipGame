@@ -22,6 +22,14 @@ export const CardsContext = createContext(null);
 
 /**
  * @export
+ * @param a
+ * @param b
+ * @return {boolean}
+ */
+export const isWinner = (a = [], b = []) => a.length * 2 === b.length;
+
+/**
+ * @export
  * @param props
  * @return {JSX.Element}
  * @constructor
@@ -57,7 +65,7 @@ const Cards = props => {
   };
 
   useEffect(() => {
-    if (completed.length * 2 === assignedCards.length) {
+    if (isWinner(completed, assignedCards)) {
       clearInterval(ts);
       setTs(null);
     }
