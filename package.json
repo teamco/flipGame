@@ -15,8 +15,8 @@
     "build": "max build",
     "preinstall": "yarn run umi:clean",
     "postinstall": "max setup",
-    "test": "jest --passWithNoTests",
-    "test:coverage": "jest --passWithNoTests --coverage",
+    "unit:test": "jest --passWithNoTests --runInBand --detectOpenHandles --forceExit",
+    "unit:test:coverage": "jest --passWithNoTests --coverage",
     "single:suite": "jest --passWithNoTests ./src/components/Footer/__tests__/footer.test.js",
     "single:test": "jest --passWithNoTests ./src/components/Common/Tags/__tests__/common.tags.test.js -t 'Hooked tags'"
   },
