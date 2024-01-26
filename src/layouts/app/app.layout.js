@@ -1,6 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import { Outlet } from '@umijs/max';
-import { Helmet } from 'react-helmet';
+import { Outlet, Helmet } from '@umijs/max';
 import { Form, Layout } from 'antd';
 
 import Page404 from '@/pages/404';

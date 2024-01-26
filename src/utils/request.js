@@ -1,5 +1,4 @@
-import { history } from '@umijs/max';
-import { request } from '@@/plugin-request';
+import { history, request } from '@umijs/max';
 import { stub } from '@/utils/function';
 import { isHost } from '@/utils/window';
 import { logger } from '@/utils/console';

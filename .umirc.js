@@ -32,6 +32,11 @@ const shared = {
   }
 };
 
+/**
+ * @constant
+ * @type {ConfigType|*}
+ * @private
+ */
 const __config__ = {
   crossorigin: true,
   alias,
@@ -43,9 +48,17 @@ const __config__ = {
     configProvider: {},
     theme
   },
-  request: {},
+  request: {
+    dataField: 'data'
+  },
   initialState: {},
-  mock: {},
+  esbuildMinifyIIFE: true,
+  codeSplitting: {
+    jsStrategy: 'granularChunks'
+  },
+  mock: {
+    include: ['mock/*.mock.js']
+  },
   manifest: {},
   favicons: [
     '/assets/favicon.png',
@@ -65,7 +78,7 @@ const __config__ = {
   },
   // devtool: NODE_ENV === 'development' ? 'eval' : false,
   ...minifier,
-  clickToComponent: {},
+  // clickToComponent: {},
   fastRefresh: true,
   dva: {
     immer: {},
@@ -85,7 +98,9 @@ const __config__ = {
   headScripts: [],
   links: [],
   metas: [],
-  plugins: []
+  plugins: [
+    'umi-plugin-circular-check'
+  ]
 };
 
 if (isDevelopment) {
@@ -94,7 +109,4 @@ if (isDevelopment) {
   console.log('\n==== /CONFIG =====\n\n');
 }
 
-console.log(__config__);
-
 export default defineConfig(__config__);
-

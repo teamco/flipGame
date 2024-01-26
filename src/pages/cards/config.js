@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { Button, Select } from 'antd';
 
 import { stub } from '@/utils/function';
@@ -27,11 +27,11 @@ const Config = props => {
   const _aL = assignedCards.length;
   const _cL = completed.length;
 
-  const calculateScore = () => {
-    const _completed = _aL ? (_cL / _aL) * 100 : 0;
+  const calculateScore = useMemo(() => {
+    const _completed = _aL ? (_cL * 2 / _aL) * 100 : 0;
     const _factor = steps > _aL ? (_aL / steps) : 1;
     return parseFloat((_completed * _factor).toString()).toFixed(1);
-  };
+  }, [_aL, _cL]);
 
   return (
       <div className={styles.config}>
@@ -40,7 +40,7 @@ const Config = props => {
           <div>{timer?.[1] || '00'}</div>
           <div>{timer?.[2] || '00'}</div>
         </div>
-        <div><strong>Score:</strong> {calculateScore()}</div>
+        <div><strong>Score:</strong> {calculateScore}</div>
         <div><strong>Steps:</strong> {steps || 0}</div>
         <div>
           <strong>Completed:</strong> {completed.length * 2}/{assignedCards.length}

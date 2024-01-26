@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
-import { Outlet } from '@umijs/max';
-import { Helmet } from 'react-helmet';
+import { Outlet, Helmet } from '@umijs/max';
 import { IntlProvider } from 'react-intl';
 import { FloatButton, Form, Layout } from 'antd';
 import ReactInterval from 'react-interval';
