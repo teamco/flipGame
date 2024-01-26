@@ -1,6 +1,10 @@
 import React, { memo } from 'react';
-import { Select } from 'antd';
+import { Button, Select } from 'antd';
+
 import { stub } from '@/utils/function';
+
+import { isWinner } from '@/pages/cards/cards';
+
 import styles from './cards.less';
 
 const Config = props => {
@@ -26,8 +30,8 @@ const Config = props => {
   const calculateScore = () => {
     const _completed = _aL ? (_cL / _aL) * 100 : 0;
     const _factor = steps > _aL ? (_aL / steps) : 1;
-    return parseFloat((_completed * _factor).toString()).toFixed(1)
-  }
+    return parseFloat((_completed * _factor).toString()).toFixed(1);
+  };
 
   return (
       <div className={styles.config}>
@@ -49,9 +53,13 @@ const Config = props => {
             onChange={grid => {
               onChangeGrid(grid);
               setTimer(null);
-              clearInterval(ts)
+              clearInterval(ts);
             }}
         />
+        <Button onClick={() => onChangeGrid(selectedGrid)}
+                disabled={!isWinner(completed, assignedCards)}>
+          Play Again
+        </Button>
       </div>
   );
 };
