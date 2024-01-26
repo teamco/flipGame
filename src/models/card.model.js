@@ -5,6 +5,8 @@ import { commonModel } from '@/models/common.model';
 
 import { monitorHistory } from '@/utils/history';
 import { shuffle } from '@/utils/array';
+import { uuid } from '@/utils/common';
+
 import { delayEffect } from '@/services/common.service';
 
 const MODEL_NAME = 'cardModel';
@@ -12,6 +14,7 @@ const MODEL_NAME = 'cardModel';
 const DEFAULT_STATE = {
   selected: [],
   completed: [],
+  assignedCards: [],
   assets: [],
   selectedGrid: 5,
   cardOpts: [],
@@ -20,8 +23,6 @@ const DEFAULT_STATE = {
 };
 
 const MIN_CARDS = 2;
-
-const uuid = () => Math.random().toString(36).slice(-6);
 
 /**
  * @export
@@ -48,7 +49,7 @@ export default dvaModelExtend(commonModel, {
 
       const _assets = [];
       for (let i = 0; i < 50; i++) {
-        const url = require(`../pages/cards/assets/image-${i + 1}.jpg`);
+        const url = require(`@/pages/cards/assets/image-${i + 1}.jpg`);
         _assets.push({ id: uuid(), url });
       }
 

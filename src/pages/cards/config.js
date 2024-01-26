@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Button, Select } from 'antd';
 
 import { stub } from '@/utils/function';
@@ -7,12 +7,19 @@ import { isWinner } from '@/pages/cards/cards';
 
 import styles from './cards.less';
 
+/**
+ * @export
+ * @param props
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Config = props => {
   const {
     setTimer = stub,
     timer = [],
-    cardModel,
+    cardModel = {},
     ts,
+    testId,
     onChangeGrid = stub
   } = props;
 
@@ -34,7 +41,8 @@ const Config = props => {
   }, [_aL, _cL]);
 
   return (
-      <div className={styles.config}>
+      <div className={styles.config}
+           data-testid={testId}>
         <div className={styles.timer}>
           <div>{timer?.[0] || '00'}</div>
           <div>{timer?.[1] || '00'}</div>

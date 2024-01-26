@@ -9,6 +9,7 @@ import Config from '@/pages/cards/config.connect';
 
 import { stub } from '@/utils/function';
 import { hms } from '@/utils/timestamp';
+import { getTestId } from '@/utils/common';
 
 import styles from './cards.less';
 
@@ -36,6 +37,7 @@ export const isWinner = (a = [], b = []) => a.length * 2 === b.length;
  */
 const Cards = props => {
   const {
+    testId,
     loading,
     cardModel,
     onCardSelect = stub,
@@ -76,12 +78,14 @@ const Cards = props => {
   }, [selected, onClearSelected]);
 
   const cardListProps = {
+    testId: getTestId({ testId, ns: 'cardList' }),
     completed,
     selected,
     onTimer
   };
 
   const configProps = {
+    testId: getTestId({ testId, ns: 'config' }),
     setTimer,
     timer,
     ts
@@ -91,6 +95,7 @@ const Cards = props => {
       <Layout>
         <Content>
           <Loader loading={loading}
+                  testId={testId}
                   spinOn={[`${MODEL_NAME}/query`]}>
             <Row gutter={0} className={styles.cards}>
               <Col span={15} offset={1}>

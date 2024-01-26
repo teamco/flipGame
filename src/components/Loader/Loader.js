@@ -18,6 +18,7 @@ const Loader = (props) => {
   const {
     spinning = false,
     loading,
+    testId,
     spinOn = [],
     children,
     className,
@@ -30,7 +31,7 @@ const Loader = (props) => {
   });
 
   return (
-      <div className={_className}>
+      <div className={_className} data-testid={testId}>
         <Spin wrapperClassName={wrapperClassName}
               spinning={_spinning}
               tip={children ? (

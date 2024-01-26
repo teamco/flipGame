@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { stub } from '@/utils/function';
 
 import styles from '@/pages/cards/cards.less';
-import { Spin } from 'antd';
 
 /**
  * @export
@@ -16,6 +15,7 @@ const Card = (props) => {
   const [show, setShow] = useState(false);
 
   const {
+    testId,
     card = {},
     idx,
     timer,
@@ -40,15 +40,18 @@ const Card = (props) => {
   const isSelected = selected.find(c => c.id === card?.id && c.idx === idx);
 
   return (
-      <div className={classnames(styles.card, styles.flipBox, {
-        [styles.selected]: isCompleted,
-        [styles.show]: !isCompleted && isSelected && show
-      })}>
+      <div data-testid={testId}
+           className={classnames(styles.card, styles.flipBox, {
+             [styles.selected]: isCompleted,
+             [styles.show]: !isCompleted && isSelected && show
+           })}>
         <div className={styles.flipBoxInner}>
           <div className={classnames(styles.flipBoxFront, {
             [styles.disabled]: spinning
           })}
-               onClick={e => handleClick(e, card)}/>
+               onClick={e => handleClick(e, card)}>
+            {testId && (<span>{card.id}-{idx}</span>)}
+          </div>
           <div className={styles.flipBoxBack}>
             <img src={card?.url} alt={card?.id}/>
           </div>

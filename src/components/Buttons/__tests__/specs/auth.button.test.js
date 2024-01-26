@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 
 import { expectations, mocksWorkaround } from '__tests__/helper';

@@ -7,6 +7,7 @@ import Winner from '@/pages/cards/winner';
 import { CardsContext, isWinner } from '@/pages/cards/cards';
 
 import { stub } from '@/utils/function';
+import { getTestId } from '@/utils/common';
 
 import styles from './cards.less';
 
@@ -18,6 +19,7 @@ import styles from './cards.less';
  */
 const CardList = props => {
   const {
+    testId,
     completed = [],
     selected = [],
     ...rest
@@ -26,9 +28,9 @@ const CardList = props => {
   const {
     timer,
     spinning,
-    assignedCards,
+    assignedCards = [],
     onClick = stub
-  } = useContext(CardsContext) || [];
+  } = useContext(CardsContext) || {};
 
   const cardProps = {
     onClick: selected.length >= 2 ? stub : onClick,
@@ -40,14 +42,18 @@ const CardList = props => {
   };
 
   return (
-      <div className={styles.cardsWrapper}>
+      <div className={styles.cardsWrapper}
+           data-testid={testId}>
         {assignedCards.length ?
             assignedCards.map((card, idx) => (
-                <Card key={idx} card={card} idx={idx} {...cardProps}/>
+                <Card key={idx} card={card} idx={idx}
+                      testId={getTestId({ testId, ns: `card-${idx}` })}
+                      {...cardProps}/>
             )) :
             <Empty/>
         }
-        <Winner winner={isWinner(completed, assignedCards)} />
+        <Winner testId={getTestId({ testId, ns: 'winner' })}
+                winner={isWinner(completed, assignedCards)}/>
       </div>
   );
 };

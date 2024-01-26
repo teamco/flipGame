@@ -9,12 +9,18 @@ import styles from './cards.less';
  * @constructor
  */
 const Winner = props => {
-  const { paths = 8, winner = false } = props;
+  const {
+    paths = 8,
+    winner = false,
+    testId
+  } = props;
 
   return winner ? (
-      <div className={styles.winner}>
+      <div className={styles.winner} data-testid={testId}>
         <div className={styles.pacman}/>
-        {[...Array(paths).keys()].map((_, idx) => (<div key={idx} className={styles.path}/>))}
+        {[...Array(paths).keys()].map((_, idx) => (
+            <div key={idx} className={styles.path}/>
+        ))}
         <div className={styles.donate}>
           <a href={'https://www.buymeacoffee.com/teamcon'} target={'_blank'}>
             <img src={'https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'}
