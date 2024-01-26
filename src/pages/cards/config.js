@@ -20,6 +20,15 @@ const Config = props => {
     selectedGrid
   } = cardModel;
 
+  const _aL = assignedCards.length;
+  const _cL = completed.length;
+
+  const calculateScore = () => {
+    const _completed = _aL ? (_cL / _aL) * 100 : 0;
+    const _factor = steps > _aL ? (_aL / steps) : 1;
+    return parseFloat((_completed * _factor).toString()).toFixed(1)
+  }
+
   return (
       <div className={styles.config}>
         <div className={styles.timer}>
@@ -27,6 +36,7 @@ const Config = props => {
           <div>{timer?.[1] || '00'}</div>
           <div>{timer?.[2] || '00'}</div>
         </div>
+        <div><strong>Score:</strong> {calculateScore()}</div>
         <div><strong>Steps:</strong> {steps || 0}</div>
         <div>
           <strong>Completed:</strong> {completed.length * 2}/{assignedCards.length}
