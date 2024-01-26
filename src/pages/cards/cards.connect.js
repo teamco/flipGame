@@ -31,9 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
     });
   },
   onClearSelected() {
-    setTimeout(() => {
-      dispatch({ type: `${MODEL_NAME}/clearSelected` });
-    }, 1500);
+    dispatch({ type: `${MODEL_NAME}/clearSelected` });
   }
 });
 

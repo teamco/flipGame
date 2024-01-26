@@ -125,3 +125,14 @@ export const useDispatcher = () => {
   const dva = getDvaApp();
   return dva._store.dispatch;
 };
+
+/**
+ * @export
+ * @param timeout
+ * @return {Promise<unknown>}
+ */
+export const delayEffect = (timeout = 0) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+};

@@ -5,8 +5,7 @@ import { commonModel } from '@/models/common.model';
 
 import { monitorHistory } from '@/utils/history';
 import { shuffle } from '@/utils/array';
-
-import { useDispatcher } from '@/services/common.service';
+import { delayEffect } from '@/services/common.service';
 
 const MODEL_NAME = 'cardModel';
 
@@ -17,6 +16,7 @@ const DEFAULT_STATE = {
   selectedGrid: 5,
   cardOpts: [],
   steps: 0,
+  spinning: false
 };
 
 const MIN_CARDS = 2;
@@ -58,7 +58,7 @@ export default dvaModelExtend(commonModel, {
             return { value: _startFrom, label: `${_startFrom * 2} Cards` };
           });
 
-      cardOpts.splice(_assets.length - MIN_CARDS, MIN_CARDS);
+      cardOpts.splice(_assets.length - MIN_CARDS + 1, MIN_CARDS);
 
       yield put({
         type: 'updateState',
@@ -91,6 +91,7 @@ export default dvaModelExtend(commonModel, {
           type: 'updateState',
           payload: {
             steps: steps + 1,
+            spinning: false,
             selected: [],
             completed: [
               ...completed,
@@ -104,6 +105,7 @@ export default dvaModelExtend(commonModel, {
         type: 'updateState',
         payload: {
           steps: steps + 1,
+          spinning: !!selected.length,
           selected: [
             ...selected,
             card
@@ -133,13 +135,16 @@ export default dvaModelExtend(commonModel, {
       });
     },
 
-    * clearSelected({ payload }, { put, select }) {
+    * clearSelected({ payload }, { put, select, call }) {
       const { selected = [] } = yield select(state => state[MODEL_NAME]);
 
       if (selected.length >= 2) {
+        yield put({ type: 'updateState', payload: { spinning: true } });
+        yield call(delayEffect, 2000);
         yield put({
           type: 'updateState',
           payload: {
+            spinning: false,
             selected: []
           }
         });

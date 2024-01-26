@@ -1,9 +1,11 @@
-import React, { memo, useContext, useEffect } from 'react';
+import React, { memo, useContext } from 'react';
 import { Empty } from 'antd';
 
 import Card from './card';
 
+import Winner from '@/pages/cards/winner';
 import { CardsContext } from '@/pages/cards/cards';
+
 import { stub } from '@/utils/function';
 
 import styles from './cards.less';
@@ -23,22 +25,19 @@ const CardList = props => {
 
   const {
     timer,
+    spinning,
     assignedCards,
-    onClick = stub,
-    clearSelected = stub
+    onClick = stub
   } = useContext(CardsContext) || [];
 
   const cardProps = {
     onClick: selected.length >= 2 ? stub : onClick,
     completed,
     selected,
+    spinning,
     timer,
     ...rest
   };
-
-  useEffect(() => {
-    clearSelected();
-  }, [clearSelected]);
 
   return (
       <div className={styles.cardsWrapper}>
@@ -48,6 +47,7 @@ const CardList = props => {
             )) :
             <Empty/>
         }
+        <Winner winner={completed.length * 2 === assignedCards.length} />
       </div>
   );
 };

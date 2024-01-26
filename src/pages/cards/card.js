@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { stub } from '@/utils/function';
 
 import styles from '@/pages/cards/cards.less';
+import { Spin } from 'antd';
 
 /**
  * @export
@@ -18,6 +19,7 @@ const Card = (props) => {
     card = {},
     idx,
     timer,
+    spinning,
     onClick = stub,
     onTimer = stub,
     completed = [],
@@ -25,6 +27,8 @@ const Card = (props) => {
   } = props;
 
   const handleClick = (e, card) => {
+    if (spinning) return false;
+
     e.preventDefault();
 
     setShow(true);
@@ -41,7 +45,9 @@ const Card = (props) => {
         [styles.show]: !isCompleted && isSelected && show
       })}>
         <div className={styles.flipBoxInner}>
-          <div className={styles.flipBoxFront}
+          <div className={classnames(styles.flipBoxFront, {
+            [styles.disabled]: spinning
+          })}
                onClick={e => handleClick(e, card)}/>
           <div className={styles.flipBoxBack}>
             <img src={card?.url} alt={card?.id}/>

@@ -37,7 +37,8 @@ const Cards = props => {
   const {
     assignedCards,
     completed,
-    selected
+    selected,
+    spinning
   } = cardModel;
 
   const [timer, setTimer] = useState(null);
@@ -62,6 +63,10 @@ const Cards = props => {
     }
   }, [timer, assignedCards, completed]);
 
+  useEffect(() => {
+    onClearSelected();
+  }, [selected, onClearSelected]);
+
   const cardListProps = {
     completed,
     selected,
@@ -72,7 +77,7 @@ const Cards = props => {
     setTimer,
     timer,
     ts
-  }
+  };
 
   return (
       <Layout>
@@ -83,9 +88,9 @@ const Cards = props => {
               <Col span={15} offset={1}>
                 <CardsContext.Provider value={{
                   assignedCards,
+                  spinning,
                   timer: { setter: setTs, key: ts },
-                  onClick: onCardSelect,
-                  clearSelected: onClearSelected
+                  onClick: onCardSelect
                 }}>
                   <CardList {...cardListProps}/>
                 </CardsContext.Provider>
