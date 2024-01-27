@@ -91,14 +91,17 @@ const Cards = props => {
     ts
   };
 
+  const leftCol = { xs: 24, sm: 24, md: 14, lg: 15, xl: 17, xxl: 17 };
+  const rightCol = { xs: 24, sm: 24, md: 9, lg: 8, xl: 6, xxl: 6 };
+
   return (
       <Layout>
         <Content>
           <Loader loading={loading}
                   testId={testId}
                   spinOn={[`${MODEL_NAME}/query`]}>
-            <Row gutter={0} className={styles.cards}>
-              <Col span={15} offset={1}>
+            <Row gutter={[0, 24]} className={styles.cards}>
+              <Col {...leftCol}>
                 <CardsContext.Provider value={{
                   assignedCards,
                   spinning,
@@ -108,7 +111,7 @@ const Cards = props => {
                   <CardList {...cardListProps}/>
                 </CardsContext.Provider>
               </Col>
-              <Col span={7} className={styles.configWrapper}>
+              <Col {...rightCol} className={styles.configWrapper}>
                 <Affix offsetTop={100}>
                   <Config {...configProps}/>
                 </Affix>
