@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import classnames from 'classnames';
 
 import { stub } from '@/utils/function';
@@ -30,6 +30,7 @@ const Card = (props) => {
     if (spinning) return false;
 
     e.preventDefault();
+    e.stopPropagation();
 
     setShow(true);
     onClick({ ...card, idx });
@@ -38,6 +39,14 @@ const Card = (props) => {
 
   const isCompleted = completed.includes(card?.id);
   const isSelected = selected.find(c => c.id === card?.id && c.idx === idx);
+
+  useEffect(() => {
+    if (!isSelected && show) {
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+    }
+  }, [isSelected])
 
   return (
       <div data-testid={testId}
@@ -49,7 +58,7 @@ const Card = (props) => {
           <div className={classnames(styles.flipBoxFront, {
             [styles.disabled]: spinning
           })}
-               onClick={e => handleClick(e, card)}>
+               onClick={e => !show && handleClick(e, card)}>
             {testId && (<span>{card.id}-{idx}</span>)}
           </div>
           <div className={styles.flipBoxBack}>
