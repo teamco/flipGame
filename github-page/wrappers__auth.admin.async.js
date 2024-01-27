@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcards=self.webpackChunkcards||[]).push([[105],{82310:function(n,s,_){_.r(s);var t=_(97857),u=_.n(t),a=_(88275),e=_(85893);s.default=function(l){return(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.Outlet,u()({},l))})}}}]);

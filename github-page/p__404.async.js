@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcards=self.webpackChunkcards||[]).push([[571],{21666:function(M,t,n){n.r(t);var O=n(67294),o=n(88275),s=n(70758),E=n(76471),a=n(85893);function r(u){var P=(0,o.useIntl)(),_=u.component,D=_===void 0?"page404":_;return(0,a.jsx)(E.Z,{title:(0,s.t)(P,"error.page404"),component:D,status:404})}t.default=r}}]);
