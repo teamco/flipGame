@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcards=self.webpackChunkcards||[]).push([[294],{27053:function(P,t,n){n.r(t);var D=n(67294),s=n(88275),E=n(70758),o=n(76471),r=n(85893);function u(e){var _=e.component,a=_===void 0?"page500":_,O=(0,s.useIntl)();return(0,r.jsx)(o.Z,{title:(0,E.t)(O,"error.page500"),plainOn:a==="page500",isLanding:!0,component:a,status:500})}t.default=u}}]);

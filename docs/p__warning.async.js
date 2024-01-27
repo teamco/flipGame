@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcards=self.webpackChunkcards||[]).push([[734],{88579:function(u,a,n){n.r(a);var O=n(67294),_=n(88275),E=n(76471),o=n(70758),s=n(85893),g=function(i){var t=i.component,r=t===void 0?"pageWarning":t,e=(0,_.useIntl)();return(0,s.jsx)(E.Z,{title:(0,o.t)(e,"error.pageWarning"),plainOn:r==="pageWarning",component:r,status:"warning"})};a.default=g}}]);
