@@ -10978,9 +10978,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flip-cards@workspace:.":
+"flipGame@workspace:.":
   version: 0.0.0-use.local
-  resolution: "flip-cards@workspace:."
+  resolution: "flipGame@workspace:."
   dependencies:
     "@ant-design/icons": "npm:^5.5.1"
     "@babel/core": "npm:^7.26.0"

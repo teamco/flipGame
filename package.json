@@ -1,7 +1,7 @@
 {
-  "homepage": "https://teamco.github.io/flip-cards/",
+  "homepage": "https://teamco.github.io/flipGame/",
   "private": true,
-  "name": "flip-cards",
+  "name": "flipGame",
   "version": "0.0.1",
   "scripts": {
     "start:linux": "cross-env PORT=8005 max dev",

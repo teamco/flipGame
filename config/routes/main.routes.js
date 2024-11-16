@@ -13,11 +13,11 @@ const MAIN_ROUTES = (mainPath = '') => {
       {
         exact: true,
         path: `${mainPath}/`,
-        redirect: '/flip-cards'
+        redirect: '/flipGame/'
       },
       {
         exact: true,
-        path: `${mainPath}/flip-cards`,
+        path: `${mainPath}/flipGame/`,
         component: '@/pages/cards'
       },
       ...mainErrors

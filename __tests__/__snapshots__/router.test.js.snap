@@ -12,7 +12,7 @@ exports[`Routes Validate routes: / 1`] = `
 {
   "exact": true,
   "path": "/",
-  "redirect": "/flip-cards",
+  "redirect": "/flipGame/",
 }
 `;
 
@@ -25,7 +25,12 @@ exports[`Routes Validate routes: / 2`] = `
     {
       "exact": true,
       "path": "/",
-      "redirect": "/flip-cards",
+      "redirect": "/flipGame/",
+    },
+    {
+      "component": "@/pages/cards",
+      "exact": true,
+      "path": "/flipGame/",
     },
     {
       "breadcrumb": "route.pageWarning",
@@ -85,5 +90,13 @@ exports[`Routes Validate routes: /errors/warning 1`] = `
   "breadcrumb": "route.pageWarning",
   "component": "@/pages/landing/errors/warning",
   "path": "/errors/warning",
+}
+`;
+
+exports[`Routes Validate routes: /flipGame/ 1`] = `
+{
+  "component": "@/pages/cards",
+  "exact": true,
+  "path": "/flipGame/",
 }
 `;

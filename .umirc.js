@@ -49,7 +49,7 @@ const __config__ = {
   // https://makojs.dev/getting-started
   // mako: {},
   base: '/',
-  publicPath: '/flip-cards/',
+  publicPath: '/flipGame/',
   outputPath: 'dist/',
   request: {
     dataField: 'data'
@@ -57,7 +57,7 @@ const __config__ = {
   manifest: {},
   initialState: {},
   favicons: [
-    '/flip-cards/assets/favicon.png'
+    '/flipGame/assets/favicon.png'
     // '/assets/favicon-16x16.png',
     // '/assets/favicon-32x32.png'
   ],

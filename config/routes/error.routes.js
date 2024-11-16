@@ -5,7 +5,7 @@
  * @param {string} [errorPath]
  * @returns {[]}
  */
-const ERRORS = (path = '/flip-cards', page = '/landing/errors', errorPath = '/errors') => [
+const ERRORS = (path = '/flipGame', page = '/landing/errors', errorPath = '/errors') => [
   {
     component: `@/pages${page}/warning`,
     breadcrumb: 'route.pageWarning',
