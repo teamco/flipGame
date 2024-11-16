@@ -5,32 +5,28 @@ import { routes } from './config/routes';
 import { theme } from './config/theme';
 import { alias } from './config/alias';
 
-const {
-  DEBUG = true,
-  NODE_ENV = 'development'
-} = process.env;
+const { NODE_ENV, DEBUG } = process.env;
 
 const isDevelopment = NODE_ENV === 'development';
-
-const minifier = isDevelopment ? {} : {
-  jsMinifier: 'esbuild',
-  jsMinifierOptions: {
-    minifyWhitespace: true,
-    minifyIdentifiers: true,
-    minifySyntax: true
-  }
-};
 
 const shared = {
   react: {
     singleton: true,
-    eager: true
+    eager: true,
+    requiredVersion: '18.3.1',
+    strictVersion: true
   },
   'react-dom': {
     singleton: true,
-    eager: true
+    eager: true,
+    requiredVersion: '18.3.1',
+    strictVersion: true
   }
 };
+
+const headScripts = DEBUG ? [
+  'http://localhost:8005'
+] : [];
 
 /**
  * @constant
@@ -38,31 +34,30 @@ const shared = {
  * @private
  */
 const __config__ = {
+  antd: {
+    theme,
+    configProvider: {},
+    style: 'less',
+    dark: false,
+    compact: true
+  },
   crossorigin: true,
   alias,
   routes,
   proxy,
   model: {},
+  // https://makojs.dev/getting-started
+  mako: {},
   base: '/',
-  publicPath: '/flip-cards/',  
-  antd: {
-    configProvider: {},
-    theme
-  },
+  publicPath: '/flip-cards/',
+  outputPath: 'dist/',
   request: {
     dataField: 'data'
   },
-  initialState: {},
-  esbuildMinifyIIFE: true,
-  codeSplitting: {
-    jsStrategy: 'granularChunks'
-  },
-  mock: {
-    include: ['mock/*.mock.js']
-  },
   manifest: {},
+  initialState: {},
   favicons: [
-    '/assets/favicon.png',
+    '/assets/favicon.png'
     // '/assets/favicon-16x16.png',
     // '/assets/favicon-32x32.png'
   ],
@@ -73,40 +68,44 @@ const __config__ = {
     baseNavigator: false,
     baseSeparator: '-'
   },
-  define: {
-    DEBUG,
-    NODE_ENV
-  },
-  // devtool: NODE_ENV === 'development' ? 'eval' : false,
-  ...minifier,
-  // clickToComponent: {},
-  fastRefresh: true,
-  dva: {
-    immer: {},
-    extraModels: []
-  },
-  mfsu: {
-    // esbuild: true
-    mfName: 'local',
-    remoteName: 'remote',
-    shared
-  },
-  lessLoader: {
-    lessLoaderOptions: {}
-  },
-  deadCode: {},
-  extraBabelPlugins: [],
-  headScripts: [],
-  links: [],
-  metas: [],
+  access: {},
+  layout: false,
+  npmClient: 'yarn',
   plugins: [
     'umi-plugin-circular-check'
-  ]
+  ],
+  extraBabelPlugins: [],
+  headScripts: [
+    // 'https://upload-widget.cloudinary.com/global/all.js'
+    ...headScripts
+  ],
+  links: [],
+  metas: [],
+  deadCode: {},
+  // @link https://umijs.org/docs/max/react-query
+  reactQuery: {},
+  // mf: {
+  //   remotes: [
+  //     {
+  //       aliasName: 'mfQjAN',
+  //       name: 'mfQjN',
+  //       entry: 'http://localhost:8003/remote.js'
+  //     }
+  //   ],
+  //   shared
+  // },
+  fastRefresh: true,
+  dva: {
+    extraModels: []
+  },
+  devtool: isDevelopment ? 'source-map' : 'eval',
+  clientLoader: {},
+  define: {}
 };
 
 if (isDevelopment) {
   console.log('\n\n==== CONFIG =====\n');
-  console.log(__config__);
+  console.log(JSON.stringify(__config__, null, 2));
   console.log('\n==== /CONFIG =====\n\n');
 }
 

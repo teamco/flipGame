@@ -13,12 +13,6 @@ function routesList() {
     console.log(colors.green(route.path), '=>', colors.cyan(route.component));
   });
 
-  console.log('\n==== ADMIN\n');
-
-  mainRoutes.routes.find(r => !r.exact).routes.forEach(route => {
-    console.log(colors.green(route.path), '=>', colors.cyan(route.component));
-  });
-
   console.log('\n==== /ROUTES =====\n\n');
 }
 
