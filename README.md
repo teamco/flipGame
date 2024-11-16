@@ -11,7 +11,6 @@
 [http://localhost:8005/](http://localhost:8005/)
 
 ### Public
-[https://iteamco.000webhostapp.com](https://iteamco.000webhostapp.com/)
 [https://teamco.github.io/flipGame/](https://teamco.github.io/flipGame/)
 
 #### Initial Screen
