@@ -43,7 +43,7 @@ const __config__ = {
   routes,
   proxy,
   model: {},
-  base: '/',
+  base: '/flip-cards',
   antd: {
     configProvider: {},
     theme
