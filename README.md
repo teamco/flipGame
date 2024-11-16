@@ -1,5 +1,6 @@
 [![CICD.Build](https://github.com/teamco/flipGame/actions/workflows/build.yml/badge.svg)](https://github.com/teamco/flipGame/actions/workflows/build.yml)
 [![Unit tests CI](https://github.com/teamco/flipGame/actions/workflows/unit.test.js.yml/badge.svg)](https://github.com/teamco/flipGame/actions/workflows/unit.test.js.yml)
+[![Deploy static content to Pages](https://github.com/teamco/flipGame/actions/workflows/static.yml/badge.svg)](https://github.com/teamco/flipGame/actions/workflows/static.yml)
 
 ### Install dependencies
 * `yarn install`
@@ -11,6 +12,7 @@
 
 ### Public
 [https://iteamco.000webhostapp.com](https://iteamco.000webhostapp.com/)
+[https://teamco.github.io/flipGame/](https://teamco.github.io/flipGame/)
 
 #### Initial Screen
 <img width="800" alt="Screenshot 2024-01-26 at 22 49 08" src="https://github.com/teamco/flipGame/assets/18106/10531246-fdff-458f-ba6d-c868af759c1e">
