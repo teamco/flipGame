@@ -7431,21 +7431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001426":
-  version: 1.0.30001442
-  resolution: "caniuse-lite@npm:1.0.30001442"
-  checksum: 10/786539c7781ce6aaeeaff4e66e663f875d0a124e4b5dc30dbfcfcea3b7860015579821cc0c43d260036a26cfc13c320d2d2da9d486a78104e82c2d00791e1e9b
-  languageName: node
-  linkType: hard
-
-"caniuse-lite@npm:^1.0.30001565":
-  version: 1.0.30001580
-  resolution: "caniuse-lite@npm:1.0.30001580"
-  checksum: 10/b626d25d792c766383a47c9efe1384f7d3c3b23e0ee70bf121e8b3a628806a96a21def16a44e58b75f4a5e23b5e008f51c2cc1e8be477b8c8d9493dcc170dd0e
-  languageName: node
-  linkType: hard
-
-"caniuse-lite@npm:^1.0.30001669":
+"caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001426, caniuse-lite@npm:^1.0.30001565, caniuse-lite@npm:^1.0.30001669":
   version: 1.0.30001680
   resolution: "caniuse-lite@npm:1.0.30001680"
   checksum: 10/38ec7e06e18ef1040740f93dff65dc4c9a7593376a783a96370f3845c586ed1d464e26b992d97919938fb07b68a4f2fb1609f66c586c3f1e7310e6511b81793f
@@ -11055,7 +11041,6 @@ __metadata:
     react-json-to-csv: "npm:^1.2.0"
     react-json-view: "npm:^1.21.3"
     react-test-renderer: "npm:^18.3.1"
-    react-use-scroll-indicator: "npm:^1.1.1"
     redux-logger: "npm:^3.0.6"
     rimraf: "npm:^6.0.1"
     ts-jest: "npm:^29.2.5"
@@ -18397,15 +18382,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 10/60069e9c80a7a294192f1b0e6838f7091307b1eb77ed91ead737aa0fe819ddc2e034982f29012aec250902dab731df222dbd587fc2d14d0f5b0443c58def9d87
-  languageName: node
-  linkType: hard
-
-"react-use-scroll-indicator@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "react-use-scroll-indicator@npm:1.1.1"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 10/f6d28d20f564869168b1b74511d64d3cb6b468d1dd55d9a9b1937a0068bdad7a95c0c838fba98d60cca42c2594aff9b1cbeadc3a955d8b0bd96fc73a2aa340ef
   languageName: node
   linkType: hard
 

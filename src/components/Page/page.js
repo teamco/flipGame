@@ -52,12 +52,9 @@ export function Page(props) {
                   ))}
                 </div>
             )}>
-              <Can I={ableFor} a={component}>
-                <div className={styles.pageContent}>
-                  {props.children}
-                </div>
-              </Can>
-              <Page403 component={component} ableFor={ableFor}/>
+              <div className={styles.pageContent}>
+                {props.children}
+              </div>
             </Spin>
           </Content>
         </Layout>

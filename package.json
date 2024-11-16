@@ -39,7 +39,6 @@
     "react-intl": "^6.8.7",
     "react-json-to-csv": "^1.2.0",
     "react-json-view": "^1.21.3",
-    "react-use-scroll-indicator": "^1.1.1",
     "web-vitals": "^4.2.4",
     "zxcvbn": "^4.4.2"
   },

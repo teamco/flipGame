@@ -47,7 +47,7 @@ const __config__ = {
   proxy,
   model: {},
   // https://makojs.dev/getting-started
-  mako: {},
+  // mako: {},
   base: '/',
   publicPath: '/flip-cards/',
   outputPath: 'dist/',
@@ -57,7 +57,7 @@ const __config__ = {
   manifest: {},
   initialState: {},
   favicons: [
-    '/assets/favicon.png'
+    '/flip-cards/assets/favicon.png'
     // '/assets/favicon-16x16.png',
     // '/assets/favicon-32x32.png'
   ],
@@ -83,8 +83,8 @@ const __config__ = {
   metas: [],
   deadCode: {},
   // @link https://umijs.org/docs/max/react-query
-  reactQuery: {},
-  // mf: {
+  // reactQuery: {},
+  mf: {
   //   remotes: [
   //     {
   //       aliasName: 'mfQjAN',
@@ -92,8 +92,8 @@ const __config__ = {
   //       entry: 'http://localhost:8003/remote.js'
   //     }
   //   ],
-  //   shared
-  // },
+    shared
+  },
   fastRefresh: true,
   dva: {
     extraModels: []

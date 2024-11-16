@@ -19,8 +19,6 @@ const { Content } = Layout;
 export const LandingPage = (props) => {
   const {
     landingModel,
-    authModel,
-    appModel,
     loading,
     onSignOut,
     spinEffects = [],
@@ -28,33 +26,11 @@ export const LandingPage = (props) => {
     onChangeLang
   } = props;
 
-  const {
-    icon,
-    topUnder,
-    header: { position, visible }
-  } = landingModel;
-
-  const { user } = authModel;
-
-  const headerProps = {
-    icon,
-    user,
-    topUnder,
-    onSignOut,
-    position,
-    landingModel,
-    authModel,
-    onChangeLang,
-    loading,
-    visible
-  };
-
   return (
       <Spin spinning={isSpinning(loading, spinEffects, loading.effects['landingModel/query'])}>
         <Layout className={styles.landing}>
           <Content>
             <div className={styles.page}>
-              <HeaderSection {...headerProps} />
               <div className={pageStyles}>
                 {props.children}
               </div>

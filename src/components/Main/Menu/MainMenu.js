@@ -41,10 +41,7 @@ const MainMenu = props => {
     spinOn = [],
     defaultDims,
     className,
-    authModel
   } = props;
-
-  const { ability } = authModel;
 
   const [selectedItems, setSelectedItems] = useState(null);
   const [openedItems, setOpenedItems] = useState(null);

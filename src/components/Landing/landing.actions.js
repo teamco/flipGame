@@ -26,13 +26,10 @@ export const LandingActions = props => {
 
   const {
     loading,
-    authModel,
     collapsible = false,
     collapsed = false,
     isSider = false
   } = props;
-
-  const { user, location, ability } = authModel;
 
   /**
    * @constant
@@ -59,7 +56,6 @@ export const LandingActions = props => {
         [styles.collapsible]: collapsible
       })}>
         <div className={styles.actions}>
-          {user ? (<></>) : null}
         </div>
         <div className={styles.auth}>
         </div>

@@ -24,7 +24,6 @@ const LandingHeader = props => {
     topUnder,
     position = 'absolute',
     landingModel,
-    authModel,
     onChangeLang,
     loading
   } = props;
@@ -45,7 +44,6 @@ const LandingHeader = props => {
 
   const actionProps = {
     loading,
-    authModel,
     collapsed
   };
 

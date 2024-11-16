@@ -6,14 +6,12 @@ const MODEL_NAME = 'cardModel';
 
 /**
  * @constant
- * @param authModel
  * @param productModel
  * @param loading
- * @return {{authModel, appModel, loading}}
+ * @return {{appModel, loading}}
  */
-const mapStateToProps = ({ authModel, cardModel, loading }) => ({
+const mapStateToProps = ({ cardModel, loading }) => ({
   cardModel,
-  authModel,
   loading
 });
 
