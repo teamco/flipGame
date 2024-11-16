@@ -3,14 +3,6 @@
 exports[`Routes Validate routes: * 1`] = `
 {
   "breadcrumb": "route.page404",
-  "component": "@/pages/404",
-  "path": "*",
-}
-`;
-
-exports[`Routes Validate routes: * 2`] = `
-{
-  "breadcrumb": "route.page404",
   "component": "@/pages/landing/errors/404",
   "path": "*",
 }
@@ -20,7 +12,7 @@ exports[`Routes Validate routes: / 1`] = `
 {
   "exact": true,
   "path": "/",
-  "redirect": "/ex/cards",
+  "redirect": "/flip-cards",
 }
 `;
 
@@ -33,49 +25,7 @@ exports[`Routes Validate routes: / 2`] = `
     {
       "exact": true,
       "path": "/",
-      "redirect": "/ex/cards",
-    },
-    {
-      "breadcrumb": "route.admin",
-      "component": "@/layouts/app",
-      "exact": false,
-      "path": "/ex",
-      "routes": [
-        {
-          "breadcrumb": "route.cards",
-          "component": "@/pages/cards",
-          "exact": true,
-          "path": "/ex/cards",
-          "wrappers": [
-            "@/wrappers/auth.admin",
-          ],
-        },
-        {
-          "breadcrumb": "route.pageWarning",
-          "component": "@/pages/warning",
-          "path": "/ex/errors/warning",
-        },
-        {
-          "breadcrumb": "route.page500",
-          "component": "@/pages/500",
-          "path": "/ex/errors/500",
-        },
-        {
-          "breadcrumb": "route.page403",
-          "component": "@/pages/403",
-          "path": "/ex/errors/403",
-        },
-        {
-          "breadcrumb": "route.page404",
-          "component": "@/pages/404",
-          "path": "/ex/errors/404",
-        },
-        {
-          "breadcrumb": "route.page404",
-          "component": "@/pages/404",
-          "path": "*",
-        },
-      ],
+      "redirect": "/flip-cards",
     },
     {
       "breadcrumb": "route.pageWarning",
@@ -135,94 +85,5 @@ exports[`Routes Validate routes: /errors/warning 1`] = `
   "breadcrumb": "route.pageWarning",
   "component": "@/pages/landing/errors/warning",
   "path": "/errors/warning",
-}
-`;
-
-exports[`Routes Validate routes: /ex 1`] = `
-{
-  "breadcrumb": "route.admin",
-  "component": "@/layouts/app",
-  "exact": false,
-  "path": "/ex",
-  "routes": [
-    {
-      "breadcrumb": "route.cards",
-      "component": "@/pages/cards",
-      "exact": true,
-      "path": "/ex/cards",
-      "wrappers": [
-        "@/wrappers/auth.admin",
-      ],
-    },
-    {
-      "breadcrumb": "route.pageWarning",
-      "component": "@/pages/warning",
-      "path": "/ex/errors/warning",
-    },
-    {
-      "breadcrumb": "route.page500",
-      "component": "@/pages/500",
-      "path": "/ex/errors/500",
-    },
-    {
-      "breadcrumb": "route.page403",
-      "component": "@/pages/403",
-      "path": "/ex/errors/403",
-    },
-    {
-      "breadcrumb": "route.page404",
-      "component": "@/pages/404",
-      "path": "/ex/errors/404",
-    },
-    {
-      "breadcrumb": "route.page404",
-      "component": "@/pages/404",
-      "path": "*",
-    },
-  ],
-}
-`;
-
-exports[`Routes Validate routes: /ex/cards 1`] = `
-{
-  "breadcrumb": "route.cards",
-  "component": "@/pages/cards",
-  "exact": true,
-  "path": "/ex/cards",
-  "wrappers": [
-    "@/wrappers/auth.admin",
-  ],
-}
-`;
-
-exports[`Routes Validate routes: /ex/errors/403 1`] = `
-{
-  "breadcrumb": "route.page403",
-  "component": "@/pages/403",
-  "path": "/ex/errors/403",
-}
-`;
-
-exports[`Routes Validate routes: /ex/errors/404 1`] = `
-{
-  "breadcrumb": "route.page404",
-  "component": "@/pages/404",
-  "path": "/ex/errors/404",
-}
-`;
-
-exports[`Routes Validate routes: /ex/errors/500 1`] = `
-{
-  "breadcrumb": "route.page500",
-  "component": "@/pages/500",
-  "path": "/ex/errors/500",
-}
-`;
-
-exports[`Routes Validate routes: /ex/errors/warning 1`] = `
-{
-  "breadcrumb": "route.pageWarning",
-  "component": "@/pages/warning",
-  "path": "/ex/errors/warning",
 }
 `;
